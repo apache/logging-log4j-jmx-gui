@@ -111,6 +111,23 @@
 
   </developers>
 
+  <scm>
+    <connection>scm:git:https://github.com/apache/logging-log4j-jmx-gui.git</connection>
+    <developerConnection>scm:git:https://github.com/apache/logging-log4j-jmx-gui.git</developerConnection>
+    <tag>HEAD</tag>
+    <url>https://github.com/apache/logging-log4j-jmx-gui</url>
+  </scm>
+
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/apache/logging-log4j-jmx-gui/issues</url>
+  </issueManagement>
+
+  <ciManagement>
+    <system>GitHub Actions</system>
+    <url>https://github.com/apache/logging-log4j-jmx-gui/actions</url>
+  </ciManagement>
+
   <properties>
 
     <!-- project version -->
