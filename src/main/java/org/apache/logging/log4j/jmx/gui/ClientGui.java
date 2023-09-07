@@ -56,6 +56,7 @@ import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.WindowConstants;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.logging.log4j.core.jmx.LoggerContextAdminMBean;
 import org.apache.logging.log4j.core.jmx.Server;
 import org.apache.logging.log4j.core.jmx.StatusLoggerAdminMBean;
@@ -69,6 +70,7 @@ import org.apache.logging.log4j.core.jmx.StatusLoggerAdminMBean;
  *      >http://docs.oracle.com/javase/6/docs/technotes/guides/management/
  *      jconsole.html</a >
  */
+@SuppressFBWarnings("INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE")
 public class ClientGui extends JPanel implements NotificationListener {
     private static final long serialVersionUID = -253621277232291174L;
     private static final int INITIAL_STRING_WRITER_SIZE = 1024;
@@ -275,6 +277,7 @@ public class ClientGui extends JPanel implements NotificationListener {
         for (final String key : props.stringPropertyNames()) {
             paramMap.put(key, props.getProperty(key));
         }
+        @SuppressWarnings("BanJNDI")
         final JMXConnector connector = JMXConnectorFactory.connect(url, paramMap);
         final Client client = new Client(connector);
         final String title = "Log4j JMX Client - " + url;

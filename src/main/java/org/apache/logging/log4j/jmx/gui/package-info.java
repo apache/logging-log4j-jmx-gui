@@ -14,6 +14,7 @@
  * See the license for the specific language governing permissions and
  * limitations under the license.
  */
+
 /**
  * Log4j 2.0 JMX GUI.
  */

@@ -35,6 +35,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.logging.log4j.core.jmx.LoggerContextAdminMBean;
 
 /**
@@ -90,12 +91,14 @@ public class ClientEditConfigPanel extends JPanel {
         }
     };
 
+    @SuppressFBWarnings("EI_EXPOSE_REP2")
     public ClientEditConfigPanel(final LoggerContextAdminMBean contextAdmin) {
         this.contextAdmin = contextAdmin;
         createWidgets();
         populateWidgets();
     }
 
+    @SuppressFBWarnings("INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE")
     private void handle(final String msg, final Exception ex) {
         final StringWriter sr = new StringWriter(BUFFER_SIZE);
         final PrintWriter pw = new PrintWriter(sr);
@@ -111,6 +114,7 @@ public class ClientEditConfigPanel extends JPanel {
                 "Reconfiguration complete", JOptionPane.INFORMATION_MESSAGE);
     }
 
+    @SuppressFBWarnings("INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE")
     private void populateWidgets() {
         try {
             configTextArea.setText(contextAdmin.getConfigText());

@@ -29,6 +29,7 @@ import javax.management.MalformedObjectNameException;
 import javax.management.ObjectName;
 import javax.management.remote.JMXConnector;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.logging.log4j.core.jmx.LoggerContextAdminMBean;
 import org.apache.logging.log4j.core.jmx.Server;
 import org.apache.logging.log4j.core.jmx.StatusLoggerAdminMBean;
@@ -69,6 +70,7 @@ public class Client {
      *             one of the remote mbeans
      * @throws IOException if the connection failed
      */
+    @SuppressFBWarnings("EI_EXPOSE_REP2")
     public Client(final MBeanServerConnection mBeanServerConnection) throws MalformedObjectNameException, IOException {
         this.connection = mBeanServerConnection;
         init();
@@ -121,6 +123,7 @@ public class Client {
      *
      * @return the MBean server connection
      */
+    @SuppressFBWarnings("EI_EXPOSE_REP")
     public MBeanServerConnection getConnection() {
         return connection;
     }

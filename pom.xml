@@ -16,68 +16,69 @@
   ~ limitations under the License.
   -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
+
   <parent>
-    <groupId>org.apache.logging.log4j</groupId>
-    <artifactId>log4j</artifactId>
-    <version>2.20.1-SNAPSHOT</version>
+    <groupId>org.apache.logging</groupId>
+    <artifactId>logging-parent</artifactId>
+    <version>10.0.0-SNAPSHOT</version>
   </parent>
+
   <artifactId>log4j-jmx-gui</artifactId>
+  <version>${revision}</version>
   <packaging>jar</packaging>
+
   <name>Apache Log4j JMX GUI</name>
-  <description>Swing GUI to remotely edit Log4j configurations. This includes a JConsole plugin and a StatusLogger monitor.</description>
+  <description>Swing-based client for remotely editing the Log4j configuration and remotely monitoring `StatusLogger` output</description>
+
   <properties>
-    <log4jParentDir>${basedir}/..</log4jParentDir>
-    <docLabel>JMX GUI Documentation</docLabel>
-    <projectDir>/jmx-gui</projectDir>
-    <module.name>org.apache.logging.log4j.jmx.gui</module.name>
+
+    <!-- project version -->
+    <revision>2.21.0-SNAPSHOT</revision>
+
+    <!-- `project.build.outputTimestamp` is required for reproducible builds: https://maven.apache.org/guides/mini/guide-reproducible-builds.html -->
+    <project.build.outputTimestamp>0</project.build.outputTimestamp>
+
+    <!-- dependency versions -->
+    <log4j.version>2.20.0</log4j.version>
+    <spotbugs-annotations.version>4.7.3</spotbugs-annotations.version>
+
   </properties>
+
   <dependencies>
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-api</artifactId>
-    </dependency>
+
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
+      <version>${log4j.version}</version>
     </dependency>
+
     <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-core-test</artifactId>
-      <scope>test</scope>
+      <groupId>com.github.spotbugs</groupId>
+      <artifactId>spotbugs-annotations</artifactId>
+      <version>${spotbugs-annotations.version}</version>
+      <optional>true</optional>
     </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
+
   </dependencies>
+
   <build>
     <plugins>
 
-      <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>none</phase>
-          </execution>
-        </executions>
-      </plugin>
-
+      <!-- Excluding dummy JConsole stubs that are placed to enable compilation with Java 8+ versions. -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
         <executions>
           <execution>
             <id>default-jar</id>
-            <!-- Exclude dummy classes -->
             <configuration>
               <archive>
                 <manifestFile combine.self="override" />
               </archive>
               <excludes>
-                <exclude>com/**</exclude>
+                <exclude>com/sun/tools/jconsole/*</exclude>
               </excludes>
             </configuration>
           </execution>
@@ -86,4 +87,5 @@
 
     </plugins>
   </build>
+
 </project>
