@@ -156,6 +156,16 @@
 
   </dependencies>
 
+  <!-- `repositories` is only needed for testing unreleased `logging-parent` functionality!
+       This block should not go into any release or whatsoever! -->
+  <repositories>
+    <repository>
+      <id>apache.snapshots.https</id>
+      <name>${distMgmtSnapshotsName}</name>
+      <url>https://repository.apache.org/content/repositories/snapshots</url>
+    </repository>
+  </repositories>
+
   <build>
     <plugins>
 
@@ -173,6 +183,21 @@
               <excludes>
                 <exclude>com/sun/tools/jconsole/*</exclude>
               </excludes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- `logging-parent` is not released yet, hence we still need to use its SNAPSHOT.
+           Temporarily disable `enforce-no-snapshots` inherited from `logging-parent`. -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>enforce-no-snapshots</id>
+            <configuration>
+              <skip>true</skip>
             </configuration>
           </execution>
         </executions>
