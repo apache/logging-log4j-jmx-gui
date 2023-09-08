@@ -133,9 +133,6 @@
     <!-- project version -->
     <revision>2.21.0-SNAPSHOT</revision>
 
-    <!-- `project.build.outputTimestamp` is required for reproducible builds: https://maven.apache.org/guides/mini/guide-reproducible-builds.html -->
-    <project.build.outputTimestamp>0</project.build.outputTimestamp>
-
     <!-- dependency versions -->
     <log4j.version>2.20.0</log4j.version>
     <spotbugs-annotations.version>4.7.3</spotbugs-annotations.version>
