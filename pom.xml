@@ -131,7 +131,7 @@
   <properties>
 
     <!-- project version -->
-    <revision>2.21.0-SNAPSHOT</revision>
+    <revision>2.21.0</revision>
 
     <!-- dependency versions -->
     <log4j.version>2.20.0</log4j.version>
