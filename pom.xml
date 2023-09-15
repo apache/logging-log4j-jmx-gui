@@ -159,7 +159,6 @@
   <build>
     <plugins>
 
-      <!-- Excluding dummy JConsole stubs that are placed to enable compilation with Java 8+ versions. -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
@@ -168,8 +167,12 @@
             <id>default-jar</id>
             <configuration>
               <archive>
-                <manifestFile combine.self="override" />
+                <manifest>
+                  <addClasspath>true</addClasspath>
+                  <mainClass>org.apache.logging.log4j.jmx.gui.ClientGui</mainClass>
+                </manifest>
               </archive>
+              <!-- Exclude dummy JConsole stubs that are placed to enable compilation with Java 8+ versions. -->
               <excludes>
                 <exclude>com/sun/tools/jconsole/*</exclude>
               </excludes>
