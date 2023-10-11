@@ -17,7 +17,7 @@ limitations under the License.
 
 https://github.com/apache/logging-log4j-jmx-gui/actions[image:https://github.com/apache/logging-log4j-jmx-gui/workflows/build/badge.svg[Actions Status]]
 https://search.maven.org/search?q=g:org.apache.logging.log4j%20a:log4j-jmx-gui[image:https://img.shields.io/maven-central/v/org.apache.logging.log4j/log4j-jmx-gui.svg[Maven Central]]
-https://www.apache.org/licenses/LICENSE-2.0.txt[image:https://img.shields.io/github/license/apache/log4j-jmx-gui.svg[License]]
+https://www.apache.org/licenses/LICENSE-2.0.txt[image:https://img.shields.io/github/license/apache/logging-log4j-jmx-gui.svg[License]]
 
 This project provides a Swing-based client for remotely editing the Log4j configuration and remotely monitoring `StatusLogger` output.
 It can be run as a standalone application or as a JConsole plugin.
