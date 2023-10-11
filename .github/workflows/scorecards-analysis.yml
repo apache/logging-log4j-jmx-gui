@@ -27,11 +27,10 @@ on:
 jobs:
 
   analysis:
-    uses: apache/logging-parent/.github/workflows/scorecards-analysis-reusable.yaml@mail
+    uses: apache/logging-parent/.github/workflows/scorecards-analysis-reusable.yaml@main
     permissions:
       # Needed to upload the results to the code-scanning dashboard.
       security-events: write
       actions: read
       id-token: write # This is required for requesting the JWT
       contents: read  # This is required for actions/checkout
-
