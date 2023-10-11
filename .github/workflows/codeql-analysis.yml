@@ -29,7 +29,7 @@ on:
 jobs:
 
   analyze:
-    uses: apache/logging-parent/.github/workflows/codeql-analisys-reusable.yaml@main
+    uses: apache/logging-parent/.github/workflows/codeql-analysis-reusable.yaml@main
     # Permissions required to publish Security Alerts
     permissions:
       actions: read
