@@ -64,5 +64,5 @@ jobs:
     permissions:
       contents: write
     with:
-      project-name: log4j-jmx-gui
+      project-id: log4j-jmx-gui
       distribution-attachment-count: 1
