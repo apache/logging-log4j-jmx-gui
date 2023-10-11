@@ -19,10 +19,10 @@ name: codeql-analysis
 
 on:
   push:
-    branches: [ 2.x ]
+    branches: [ main ]
   pull_request:
     # The branches below must be a subset of the branches provided in `on.push.branches`
-    branches: [ 2.x ]
+    branches: [ main ]
   schedule:
     - cron: '32 12 * * 5'
 
@@ -30,8 +30,8 @@ jobs:
 
   analyze:
     uses: apache/logging-parent/.github/workflows/codeql-analisys-reusable.yaml@main
+    # Permissions required to publish Security Alerts
     permissions:
       actions: read
       contents: read
       security-events: write
-
