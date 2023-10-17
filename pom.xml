@@ -25,6 +25,7 @@
     <version>10.1.1</version>
   </parent>
 
+  <groupId>org.apache.logging.log4j</groupId>
   <artifactId>log4j-jmx-gui</artifactId>
   <version>${revision}</version>
   <packaging>jar</packaging>
