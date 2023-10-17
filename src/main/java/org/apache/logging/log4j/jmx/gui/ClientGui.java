@@ -56,6 +56,7 @@ import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.WindowConstants;
 
+import aQute.bnd.annotation.jpms.MainClass;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.logging.log4j.core.jmx.LoggerContextAdminMBean;
 import org.apache.logging.log4j.core.jmx.Server;
@@ -70,6 +71,7 @@ import org.apache.logging.log4j.core.jmx.StatusLoggerAdminMBean;
  *      >http://docs.oracle.com/javase/6/docs/technotes/guides/management/
  *      jconsole.html</a >
  */
+@MainClass
 @SuppressFBWarnings("INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE")
 public class ClientGui extends JPanel implements NotificationListener {
     private static final long serialVersionUID = -253621277232291174L;

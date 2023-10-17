@@ -138,21 +138,34 @@
     <log4j-changelog-maven-plugin.version>0.5.0</log4j-changelog-maven-plugin.version>
     <spotbugs-annotations.version>4.8.0</spotbugs-annotations.version>
 
+    <!-- Additional manifest entries -->
+    <Class-Path>log4j-api-2.21.0.jar log4j-core-2.21.0.jar</Class-Path>
   </properties>
 
   <dependencies>
 
     <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-core</artifactId>
-      <version>${log4j.version}</version>
+      <groupId>biz.aQute.bnd</groupId>
+      <artifactId>biz.aQute.bnd.annotation</artifactId>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>com.github.spotbugs</groupId>
       <artifactId>spotbugs-annotations</artifactId>
-      <version>${spotbugs-annotations.version}</version>
-      <optional>true</optional>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.annotation.bundle</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>${log4j.version}</version>
     </dependency>
 
   </dependencies>
@@ -162,21 +175,25 @@
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
+        <artifactId>maven-clean-plugin</artifactId>
         <executions>
           <execution>
-            <id>default-jar</id>
+            <!-- Remove dummy JConsole stubs that are placed to enable compilation with Java 8+ versions. -->
+            <id>remove-stubs</id>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+            <phase>process-classes</phase>
             <configuration>
-              <archive>
-                <manifest>
-                  <addClasspath>true</addClasspath>
-                  <mainClass>org.apache.logging.log4j.jmx.gui.ClientGui</mainClass>
-                </manifest>
-              </archive>
-              <!-- Exclude dummy JConsole stubs that are placed to enable compilation with Java 8+ versions. -->
-              <excludes>
-                <exclude>com/sun/tools/jconsole/*</exclude>
-              </excludes>
+              <excludeDefaultDirectories>true</excludeDefaultDirectories>
+              <filesets>
+                <fileset>
+                  <directory>${project.build.outputDirectory}</directory>
+                  <includes>
+                    <include>com/sun/tools/jconsole/**</include>
+                  </includes>
+                </fileset>
+              </filesets>
             </configuration>
           </execution>
         </executions>

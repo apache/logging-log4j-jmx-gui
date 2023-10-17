@@ -18,4 +18,7 @@
 /**
  * Log4j 2.0 JMX GUI.
  */
+@Export
 package org.apache.logging.log4j.jmx.gui;
+
+import org.osgi.annotation.bundle.Export;
