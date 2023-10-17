@@ -134,7 +134,8 @@
     <revision>2.22.0-SNAPSHOT</revision>
 
     <!-- dependency versions -->
-    <log4j.version>2.20.0</log4j.version>
+    <log4j.version>2.21.0</log4j.version>
+    <log4j-changelog-maven-plugin.version>0.5.0</log4j-changelog-maven-plugin.version>
     <spotbugs-annotations.version>4.8.0</spotbugs-annotations.version>
 
   </properties>
