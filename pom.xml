@@ -22,7 +22,7 @@
   <parent>
     <groupId>org.apache.logging</groupId>
     <artifactId>logging-parent</artifactId>
-    <version>10.1.1</version>
+    <version>10.2.0</version>
   </parent>
 
   <groupId>org.apache.logging.log4j</groupId>
@@ -132,12 +132,10 @@
   <properties>
 
     <!-- project version -->
-    <revision>2.22.0-SNAPSHOT</revision>
+    <revision>2.21.1-SNAPSHOT</revision>
 
     <!-- dependency versions -->
     <log4j.version>2.21.0</log4j.version>
-    <log4j-changelog-maven-plugin.version>0.5.0</log4j-changelog-maven-plugin.version>
-    <spotbugs-annotations.version>4.8.0</spotbugs-annotations.version>
 
     <!-- Additional manifest entries -->
     <Class-Path>log4j-api-2.21.0.jar log4j-core-2.21.0.jar</Class-Path>
@@ -180,12 +178,14 @@
   <build>
     <plugins>
 
+      <!--
+        ~ Remove dummy JConsole stubs that are placed to enable compilation with Java 8+ versions.
+        -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-clean-plugin</artifactId>
         <executions>
           <execution>
-            <!-- Remove dummy JConsole stubs that are placed to enable compilation with Java 8+ versions. -->
             <id>remove-stubs</id>
             <goals>
               <goal>clean</goal>
@@ -207,18 +207,18 @@
       </plugin>
 
       <plugin>
-        <groupId>biz.aQute.bnd</groupId>
-        <artifactId>bnd-baseline-maven-plugin</artifactId>
-        <version>${bnd-maven-plugin.version}</version>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+        <version>${flatten-maven-plugin.version}</version>
         <executions>
           <execution>
-            <id>baseline</id>
-            <goals>
-              <goal>baseline</goal>
-            </goals>
+            <id>flatten-clean</id>
+            <!-- `logging-parent` 10.2.0 does not bind this execution -->
+            <phase>clean</phase>
           </execution>
         </executions>
       </plugin>
+
     </plugins>
   </build>
 
