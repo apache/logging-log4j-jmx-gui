@@ -15,7 +15,7 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" child.project.url.inherit.append.path="false" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
@@ -112,7 +112,7 @@
 
   </developers>
 
-  <scm>
+  <scm child.scm.connection.inherit.append.path="false" child.scm.developerConnection.inherit.append.path="false" child.scm.url.inherit.append.path="false">
     <connection>scm:git:https://github.com/apache/logging-log4j-jmx-gui.git</connection>
     <developerConnection>scm:git:https://github.com/apache/logging-log4j-jmx-gui.git</developerConnection>
     <tag>HEAD</tag>
@@ -129,16 +129,21 @@
     <url>https://github.com/apache/logging-log4j-jmx-gui/actions</url>
   </ciManagement>
 
+  <distributionManagement>
+    <downloadUrl>${scm.url}</downloadUrl>
+  </distributionManagement>
+
   <properties>
 
     <!-- project version -->
-    <revision>2.21.1-SNAPSHOT</revision>
+    <revision>2.22.0-SNAPSHOT</revision>
+
+    <!-- Additional manifest entries -->
+    <Class-Path>log4j-api-2.21.0.jar log4j-core-2.21.0.jar</Class-Path>
 
     <!-- dependency versions -->
     <log4j.version>2.21.0</log4j.version>
 
-    <!-- Additional manifest entries -->
-    <Class-Path>log4j-api-2.21.0.jar log4j-core-2.21.0.jar</Class-Path>
   </properties>
 
   <dependencies>
