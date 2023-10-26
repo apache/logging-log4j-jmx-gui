@@ -14,13 +14,13 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<#if entriesByType?size gt 0>## Changes
+<#if entriesByType?size gt 0>
 <#list entriesByType as entryType, entries>
 
-### ${entryType?capitalize}
+=== ${entryType?capitalize}
 
 <#list entries as entry>
-* ${entry.description.text?replace("\\s+", " ", "r")}<#if entry.issues?has_content> (<#list entry.issues as issue><#if issue.link?starts_with("https://github.com/apache/logging-log4j-jmx-gui")>#${issue.id}<#else>[${issue.id}](${issue.link})</#if><#if issue?has_next>, </#if></#list>)</#if>
+* ${entry.description.text?replace("\\s+", " ", "r")}<#if entry.issues?has_content> (<#list entry.issues as issue>${issue.link}[${issue.id}]<#if issue?has_next>, </#if></#list>)</#if>
 </#list>
 </#list>
 </#if>

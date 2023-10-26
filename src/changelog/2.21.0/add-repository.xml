@@ -3,6 +3,5 @@
        xmlns="http://logging.apache.org/log4j/changelog"
        xsi:schemaLocation="http://logging.apache.org/log4j/changelog https://logging.apache.org/log4j/changelog-0.1.2.xsd"
        type="added">
-  <author id="github:vy"/>
-  <description format="markdown">Project is moved to a new [repository](https://github.com/apache/logging-log4j-jmx-gui) with its own release cycle</description>
+  <description format="asciidoc">Project is moved to a new https://github.com/apache/logging-log4j-jmx-gui[repository] with its own release cycle</description>
 </entry>
