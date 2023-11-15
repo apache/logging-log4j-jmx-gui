@@ -15,9 +15,14 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<entry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns="http://logging.apache.org/log4j/changelog"
-       xsi:schemaLocation="http://logging.apache.org/log4j/changelog https://logging.apache.org/log4j/changelog-0.1.2.xsd"
-       type="added">
-  <description format="asciidoc">Started generating CycloneDX SBOM with the recent update of `logging-parent` to version `10.4.0`</description>
-</entry>
+<FindBugsFilter
+        xmlns="https://github.com/spotbugs/filter/3.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://github.com/spotbugs/filter/3.0.0 https://raw.githubusercontent.com/spotbugs/spotbugs/3.1.0/spotbugs/etc/findbugsfilter.xsd">
+    <Match>
+        <Not>
+          <Bug category="SECURITY"/>
+        </Not>
+        <Rank value="9"/>
+    </Match>
+</FindBugsFilter>

@@ -16,20 +16,18 @@
  */
 package org.apache.logging.log4j.jmx.gui;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
-
 import javax.management.JMException;
 import javax.management.JMX;
 import javax.management.MBeanServerConnection;
 import javax.management.MalformedObjectNameException;
 import javax.management.ObjectName;
 import javax.management.remote.JMXConnector;
-
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.logging.log4j.core.jmx.LoggerContextAdminMBean;
 import org.apache.logging.log4j.core.jmx.Server;
 import org.apache.logging.log4j.core.jmx.StatusLoggerAdminMBean;
@@ -76,8 +74,7 @@ public class Client {
         init();
     }
 
-    private void init() throws MalformedObjectNameException, IOException {
-    }
+    private void init() throws MalformedObjectNameException, IOException {}
 
     private Set<ObjectName> find(final String pattern) throws JMException, IOException {
         final ObjectName search = new ObjectName(String.format(pattern, "*"));
@@ -103,9 +100,11 @@ public class Client {
     }
 
     public LoggerContextAdminMBean getLoggerContextAdmin(final ObjectName name) {
-        final LoggerContextAdminMBean ctx = JMX.newMBeanProxy(connection, //
+        final LoggerContextAdminMBean ctx = JMX.newMBeanProxy(
+                connection, //
                 name, //
-                LoggerContextAdminMBean.class, false);
+                LoggerContextAdminMBean.class,
+                false);
         return ctx;
     }
 
@@ -149,9 +148,11 @@ public class Client {
         if (result.size() > 1) {
             System.err.println("WARN: multiple status loggers found for " + contextName + ": " + result);
         }
-        final StatusLoggerAdminMBean proxy = JMX.newMBeanProxy(connection, //
+        final StatusLoggerAdminMBean proxy = JMX.newMBeanProxy(
+                connection, //
                 result.iterator().next(), //
-                StatusLoggerAdminMBean.class, true); // notificationBroadcaster
+                StatusLoggerAdminMBean.class,
+                true); // notificationBroadcaster
         return proxy;
     }
 

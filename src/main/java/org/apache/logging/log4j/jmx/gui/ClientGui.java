@@ -16,6 +16,8 @@
  */
 package org.apache.logging.log4j.jmx.gui;
 
+import aQute.bnd.annotation.jpms.MainClass;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -28,7 +30,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Properties;
-
 import javax.management.InstanceNotFoundException;
 import javax.management.JMException;
 import javax.management.ListenerNotFoundException;
@@ -55,9 +56,6 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.WindowConstants;
-
-import aQute.bnd.annotation.jpms.MainClass;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.logging.log4j.core.jmx.LoggerContextAdminMBean;
 import org.apache.logging.log4j.core.jmx.Server;
 import org.apache.logging.log4j.core.jmx.StatusLoggerAdminMBean;
@@ -105,8 +103,8 @@ public class ClientGui extends JPanel implements NotificationListener {
         }
     }
 
-    private void addWidgetForLoggerContext(final LoggerContextAdminMBean ctx) throws MalformedObjectNameException,
-            IOException, InstanceNotFoundException {
+    private void addWidgetForLoggerContext(final LoggerContextAdminMBean ctx)
+            throws MalformedObjectNameException, IOException, InstanceNotFoundException {
         final JTabbedPane contextTabs = new JTabbedPane();
         contextObjNameToTabbedPaneMap.put(ctx.getObjectName(), contextTabs);
         tabbedPaneContexts.addTab("LoggerContext: " + ctx.getName(), contextTabs);
@@ -165,15 +163,16 @@ public class ClientGui extends JPanel implements NotificationListener {
             }
         });
         toggleButton.setToolTipText("Toggle line wrapping");
-        final JScrollPane scrollStatusLog = new JScrollPane(text, //
+        final JScrollPane scrollStatusLog = new JScrollPane(
+                text, //
                 ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, //
                 ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollStatusLog.setCorner(ScrollPaneConstants.LOWER_RIGHT_CORNER, toggleButton);
         return scrollStatusLog;
     }
 
-    private void registerListeners(final StatusLoggerAdminMBean status) throws InstanceNotFoundException,
-            MalformedObjectNameException, IOException {
+    private void registerListeners(final StatusLoggerAdminMBean status)
+            throws InstanceNotFoundException, MalformedObjectNameException, IOException {
         final NotificationFilterSupport filter = new NotificationFilterSupport();
         filter.enableType(StatusLoggerAdminMBean.NOTIF_TYPE_MESSAGE);
         final ObjectName objName = status.getObjectName();
@@ -189,7 +188,9 @@ public class ClientGui extends JPanel implements NotificationListener {
     private void handleNotificationInAwtEventThread(final Notification notif, final Object paramObject) {
         if (StatusLoggerAdminMBean.NOTIF_TYPE_MESSAGE.equals(notif.getType())) {
             if (!(paramObject instanceof ObjectName)) {
-                handle("Invalid notification object type", new ClassCastException(paramObject.getClass().getName()));
+                handle(
+                        "Invalid notification object type",
+                        new ClassCastException(paramObject.getClass().getName()));
                 return;
             }
             final ObjectName param = (ObjectName) paramObject;

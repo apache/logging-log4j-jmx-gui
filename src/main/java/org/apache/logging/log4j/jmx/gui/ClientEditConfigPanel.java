@@ -16,6 +16,7 @@
  */
 package org.apache.logging.log4j.jmx.gui;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -23,7 +24,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-
 import javax.swing.AbstractAction;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -34,8 +34,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.logging.log4j.core.jmx.LoggerContextAdminMBean;
 
 /**
@@ -57,8 +55,7 @@ public class ClientEditConfigPanel extends JPanel {
     private JTextArea configTextArea;
     private final LoggerContextAdminMBean contextAdmin;
 
-    private final AbstractAction actionReconfigureFromLocation = new AbstractAction(
-            "Reconfigure from Location") {
+    private final AbstractAction actionReconfigureFromLocation = new AbstractAction("Reconfigure from Location") {
         private static final long serialVersionUID = 6995219797596745774L;
 
         @Override
@@ -73,8 +70,7 @@ public class ClientEditConfigPanel extends JPanel {
             }
         }
     };
-    private final AbstractAction actionReconfigureFromText = new AbstractAction(
-            "Reconfigure with XML Below") {
+    private final AbstractAction actionReconfigureFromText = new AbstractAction("Reconfigure with XML Below") {
         private static final long serialVersionUID = -2846103707134292312L;
 
         @Override
@@ -105,13 +101,12 @@ public class ClientEditConfigPanel extends JPanel {
         pw.println("Please check the StatusLogger tab for details");
         pw.println();
         ex.printStackTrace(pw);
-        JOptionPane.showMessageDialog(this, sr.toString(), msg,
-                JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, sr.toString(), msg, JOptionPane.ERROR_MESSAGE);
     }
 
     private void showConfirmation() {
-        JOptionPane.showMessageDialog(this, "Reconfiguration complete.",
-                "Reconfiguration complete", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(
+                this, "Reconfiguration complete.", "Reconfiguration complete", JOptionPane.INFORMATION_MESSAGE);
     }
 
     @SuppressFBWarnings("INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE")
@@ -132,7 +127,8 @@ public class ClientEditConfigPanel extends JPanel {
         // configTextArea.setEditable(false);
         configTextArea.setBackground(Color.white);
         configTextArea.setForeground(Color.black);
-        configTextArea.setFont(new Font(Font.MONOSPACED, Font.PLAIN, configTextArea.getFont().getSize()));
+        configTextArea.setFont(
+                new Font(Font.MONOSPACED, Font.PLAIN, configTextArea.getFont().getSize()));
         final JScrollPane scrollConfig = new JScrollPane(configTextArea);
 
         locationTextField = new JTextField(LOCATION_TEXT_COLS);

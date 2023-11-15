@@ -17,7 +17,6 @@
 package com.sun.tools.jconsole;
 
 import java.util.Map;
-
 import javax.swing.JPanel;
 import javax.swing.SwingWorker;
 
