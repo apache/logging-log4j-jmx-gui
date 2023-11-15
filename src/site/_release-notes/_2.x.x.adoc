@@ -48,8 +48,9 @@ This release contains minor improvements.
 === Changed
 
 * Add OSGi and JPMS descriptors
-* Upgrade `logging-parent` to version 10.2.0, `log4j-core` to version 2.21.0.
+* Update `logging-parent` to version `10.2.0`
+* Update `log4j-core` to version `2.21.0`
 
 === Fixed
 
-* Restore the original groupId: `org.apache.logging.log4j`
+* Restore the original Maven `groupId`: `org.apache.logging.log4j`
