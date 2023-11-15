@@ -4,6 +4,6 @@
        xsi:schemaLocation="http://logging.apache.org/log4j/changelog https://logging.apache.org/log4j/changelog-0.1.2.xsd"
        type="changed">
   <description format="asciidoc">
-    Update `logging-parent` to version `10.2.0`
+    Update `log4j-core` to version `2.21.1`
   </description>
 </entry>
