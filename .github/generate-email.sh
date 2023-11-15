@@ -33,6 +33,8 @@ fail_for_invalid_args() {
 
 # Constants
 PROJECT_NAME="Apache Log4j JMX GUI"
+PROJECT_SITE="https://logging.apache.org/log4j/jmx-gui"
+PROJECT_STAGING_SITE="${PROJECT_SITE/apache.org/staged.apache.org}"
 PROJECT_REPO="https://github.com/apache/logging-log4j-jmx-gui"
 PROJECT_DIST_DIR="https://dist.apache.org/repos/dist/dev/logging/log4j-jmx-gui"
 PROJECT_VERSION="$2"
@@ -60,7 +62,8 @@ Title: [VOTE] Release $PROJECT_NAME $PROJECT_VERSION
 
 This is a vote to release the $PROJECT_NAME $PROJECT_VERSION.
 
-Source repository: $PROJECT_REPO
+Website: $PROJECT_STAGING_SITE
+GitHub: $PROJECT_REPO
 Commit: $COMMIT_ID
 Distribution: $PROJECT_DIST_DIR
 Nexus: https://repository.apache.org/content/repositories/orgapachelogging-1113
@@ -92,7 +95,7 @@ release. This project provides a Swing-based client for remotely
 editing the Log4j configuration and remotely monitoring \`StatusLogger\`
 output. It can be run as a standalone application or as a JConsole plugin.
 
-[1] $PROJECT_REPO
+[1] $PROJECT_SITE
 
 === Release Notes
 EOF
