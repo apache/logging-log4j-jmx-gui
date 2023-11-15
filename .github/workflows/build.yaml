@@ -71,4 +71,4 @@ jobs:
       contents: write
     with:
       project-id: log4j-jmx-gui
-      distribution-attachment-count: 1
+      site-enabled: true
