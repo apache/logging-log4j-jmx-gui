@@ -40,18 +40,3 @@
 
 This release contains minor improvements.
 
-
-=== Added
-
-* Started generating CycloneDX SBOM with the recent update of `logging-parent` to version `10.4.0`
-* Publish https://logging.apache.org/log4j/jmx-gui[the website]
-
-=== Changed
-
-* Add OSGi and JPMS descriptors
-* Update `log4j-core` to version `2.21.1`
-* Update `logging-parent` to version `10.4.0`
-
-=== Fixed
-
-* Restore the original Maven `groupId`: `org.apache.logging.log4j`

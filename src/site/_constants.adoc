@@ -34,7 +34,7 @@
 ////
 
 :project-github-url: https://github.com/apache/logging-log4j-jmx-gui
-:project-version: 2.22.0-SNAPSHOT
+:project-version: 2.22.0
 :project-name: Log4j JMX GUI
 :project-id: log4j-jmx-gui
 :java-target-version: 8
