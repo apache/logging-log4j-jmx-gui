@@ -20,7 +20,7 @@
 github:
 
   description: Swing-based client for remotely editing the Log4j configuration and remotely monitoring `StatusLogger` output
-  homepage: https://logging.apache.org
+  homepage: https://logging.apache.org/log4j/jmx-gui
   labels:
     - apache
     - java
