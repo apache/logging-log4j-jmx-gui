@@ -151,7 +151,7 @@
     <Class-Path>log4j-api-2.21.0.jar log4j-core-2.21.0.jar</Class-Path>
 
     <!-- dependency versions -->
-    <log4j.version>2.21.1</log4j.version>
+    <log4j.version>2.22.0</log4j.version>
 
   </properties>
 
