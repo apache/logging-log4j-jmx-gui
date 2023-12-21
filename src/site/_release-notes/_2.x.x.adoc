@@ -44,3 +44,7 @@ This release contains minor improvements.
 === Changed
 
 * Update `org.apache.logging.log4j:log4j-core` to version `2.22.0` (https://github.com/apache/logging-log4j-jmx-gui/pull/3[3])
+
+=== Updated
+
+* Update `org.apache.logging:logging-parent` to version `10.5.0` (https://github.com/apache/logging-log4j-jmx-gui/pull/4[4])
