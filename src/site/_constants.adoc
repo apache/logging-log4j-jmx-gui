@@ -39,4 +39,4 @@
 :project-id: log4j-jmx-gui
 :java-target-version: 8
 :java-compiler-version: [17,18)
-:log4j-version: 2.22.0
+:log4j-version: 2.22.1
