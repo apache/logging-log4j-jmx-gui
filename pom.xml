@@ -33,6 +33,13 @@
   <name>Apache Log4j JMX GUI</name>
   <description>Swing-based client for remotely editing the Log4j configuration and remotely monitoring `StatusLogger` output</description>
 
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+
   <developers>
 
     <developer>
