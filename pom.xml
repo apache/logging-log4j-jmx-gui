@@ -22,7 +22,7 @@
   <parent>
     <groupId>org.apache.logging</groupId>
     <artifactId>logging-parent</artifactId>
-    <version>10.6.0</version>
+    <version>11.0.0</version>
   </parent>
 
   <groupId>org.apache.logging.log4j</groupId>
@@ -130,7 +130,7 @@
   </ciManagement>
 
   <distributionManagement>
-    <downloadUrl>${scm.url}</downloadUrl>
+    <downloadUrl>https://logging.apache.org/download.html</downloadUrl>
   </distributionManagement>
 
   <properties>
@@ -147,11 +147,12 @@
          Hence, *DO NOT MANUALLY EDIT THIS VALUE*! -->
     <project.build.outputTimestamp>2023-11-15T15:33:35Z</project.build.outputTimestamp>
 
-    <!-- Additional manifest entries -->
-    <Class-Path>log4j-api-2.21.0.jar log4j-core-2.21.0.jar</Class-Path>
-
     <!-- dependency versions -->
     <log4j.version>2.23.1</log4j.version>
+    <nashorn.version>15.4</nashorn.version>
+
+    <!-- Additional manifest entries -->
+    <Class-Path>log4j-api-${log4j.version}.jar log4j-core-${log4j.version}.jar</Class-Path>
 
   </properties>
 
@@ -185,6 +186,12 @@
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
       <version>${log4j.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.openjdk.nashorn</groupId>
+      <artifactId>nashorn-core</artifactId>
+      <version>${nashorn.version}</version>
     </dependency>
 
   </dependencies>

@@ -19,7 +19,7 @@
  * Log4j 2.0 JMX GUI.
  */
 @Export
-@Version("2.20.1")
+@Version("2.20.2")
 package org.apache.logging.log4j.jmx.gui;
 
 import org.osgi.annotation.bundle.Export;

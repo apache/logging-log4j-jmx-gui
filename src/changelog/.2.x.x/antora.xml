@@ -3,7 +3,6 @@
        xmlns="https://logging.apache.org/xml/ns"
        xsi:schemaLocation="https://logging.apache.org/xml/ns https://logging.apache.org/xml/ns/log4j-changelog-0.xsd"
        type="changed">
-  <description format="asciidoc">
-    Update `log4j-core` to version `2.21.1`
-  </description>
+  <issue id="apache/logging-log4j2#2443" link="https://github.com/apache/logging-log4j2/pull/2443"/>
+  <description format="asciidoc">Website is migrated to Antora</description>
 </entry>

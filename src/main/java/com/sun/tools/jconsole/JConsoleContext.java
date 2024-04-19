@@ -23,5 +23,5 @@ import javax.management.MBeanServerConnection;
  */
 public interface JConsoleContext {
 
-    public MBeanServerConnection getMBeanServerConnection();
+    MBeanServerConnection getMBeanServerConnection();
 }

@@ -16,6 +16,8 @@
  */
 package org.apache.logging.log4j.jmx.gui;
 
+import aQute.bnd.annotation.Resolution;
+import aQute.bnd.annotation.spi.ServiceProvider;
 import com.sun.tools.jconsole.JConsolePlugin;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +27,7 @@ import javax.swing.SwingWorker;
 /**
  * Adapts the {@code ClientGui} to the {@code JConsolePlugin} API.
  */
+@ServiceProvider(value = JConsolePlugin.class, resolution = Resolution.MANDATORY)
 public class ClientGuiJConsolePlugin extends JConsolePlugin {
 
     @Override

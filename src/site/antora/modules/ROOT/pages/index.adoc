@@ -18,7 +18,9 @@
 :log4j-jmx-doc-url: https://logging.apache.org/log4j/2.x/manual/jmx.html
 :oracle-remote-monitoring-doc-url: https://docs.oracle.com/javase/8/docs/technotes/guides/management/agent.html#gdenl
 
-The Log4j JMX GUI provides a Swing-based client for remotely editing the Log4j configuration and remotely monitoring `StatusLogger` output.
+= Log4j JMX GUI
+
+The {project-name} provides a Swing-based client for remotely editing the Log4j configuration and remotely monitoring `StatusLogger` output.
 It can be run as a standalone application or as a JConsole plugin.
 
 Log4j has built-in support for JMX.
