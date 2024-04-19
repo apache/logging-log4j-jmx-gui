@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Log4j JMX GUI :: Apache Log4j JMX GUI</title>
+    <link rel="canonical" href="https://logging.apache.org/log4j/jmx-gui/index.html">
+    <meta name="generator" content="Antora 3.2.0-alpha.4">
+<link rel="stylesheet" href="./_/css/site.css">
+<link rel="icon" href="./_/../_images/favicon.ico" type="image/x-icon">
+<!-- `@asciidoctor/tabs` extension styles -->
+<link rel="stylesheet" href="./_/css/vendor/tabs.css">
+<style>
+  /* `page-toclevels` greater than 4 are not supported by Antora UI, patching it: */
+  .toc .toc-menu li[data-level="4"] a {
+    padding-left: 2.75rem
+  }
+  /* Replace the default highlight.js color for strings from red to green: */
+  .hljs-string {
+    color: #0f8532;
+  }
+</style>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <span class="navbar-item title">Apache Log4j JMX GUI</span>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://logging.apache.org">a subproject of&nbsp;<strong>Apache Logging Services</strong></a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="index.html">Home</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="development.html">Development</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="release-notes.html">Release notes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="https://logging.apache.org/download.html">Download</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="https://logging.apache.org/support.html">Support</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="https://logging.apache.org/security.html">Security</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link is-current"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html">Log4j JMX GUI</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="https://github.com/apache/logging-log4j-jmx-gui/edit/main/src/site/antora/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Log4j JMX GUI</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Log4j JMX GUI provides a Swing-based client for remotely editing the Log4j configuration and remotely monitoring <code>StatusLogger</code> output.
+It can be run as a standalone application or as a JConsole plugin.</p>
+</div>
+<div class="paragraph">
+<p>Log4j has built-in support for JMX.
+The <code>StatusLogger</code>, <code>ContextSelector</code>, and all <code>LoggerContext</code>s, <code>LoggerConfig</code>s and <code>Appender</code>s are instrumented with MBeans and can be remotely monitored and controlled.
+See the <a href="https://logging.apache.org/log4j/2.x/manual/jmx.html">Log4j JMX support documentation</a> on how to configure it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jconsole-run"><a class="anchor" href="#jconsole-run"></a>Running the client as a JConsole plugin</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To run the Log4j JMX GUI as a JConsole plugin, start JConsole with the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$JAVA_HOME/bin/jconsole -pluginpath /path/to/log4j-api-2.23.1.jar:/path/to/log4j-core-2.23.1.jar:/path/to/log4j-jmx-gui-2.23.0-SNAPSHOT.jar</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or on Windows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">%JAVA_HOME%\bin\jconsole -pluginpath \path\to\log4j-api-2.23.1.jar;\path\to\log4j-core-2.23.1.jar;\path\to\log4j-jmx-gui-2.23.0-SNAPSHOT.jar</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you execute the above command and connect to your application, you will see an extra <code>Log4j 2</code> tab in the JConsole window.
+This tab contains the client GUI, with the <code>StatusLogger</code> selected.
+The screenshot below shows the <code>StatusLogger</code> panel in JConsole.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/jmx-jconsole-statuslogger.png" alt="jmx jconsole statuslogger">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jconsole-edit"><a class="anchor" href="#jconsole-edit"></a>Remotely editing the Log4j configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The client GUI also contains a simple editor that can be used to remotely change the Log4j configuration.
+The screenshot below shows the configuration edit panel in JConsole.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/jmx-jconsole-editconfig.png" alt="jmx jconsole editconfig">
+</div>
+</div>
+<div class="paragraph">
+<p>The configuration edit panel provides two ways to modify the Log4j configuration: specifying a different configuration location URI, or modifying the configuration XML directly in the editor panel.</p>
+</div>
+<div class="paragraph">
+<p>If you specify a different configuration location URI and click the <em>"Reconfigure from Location"</em> button, the specified file or resource must exist and be readable by the application, or an error will occur and the configuration will not change.
+If an error occurred while processing the contents of the specified resource, Log4j will keep its original configuration, but the editor panel will show the contents of the file you specified.</p>
+</div>
+<div class="paragraph">
+<p>The text area showing the contents of the configuration file is editable, and you can directly modify the configuration in this editor panel.
+Clicking the <em>"Reconfigure with XML below"</em> button will send the configuration text to the remote application where it will be used to reconfigure Log4j on the fly.
+This will not overwrite any configuration file.
+Reconfiguring with text from the editor happens in memory only and the text is not permanently stored anywhere.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="standalone-run"><a class="anchor" href="#standalone-run"></a>Running the client as a standalone application</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To run the Log4j JMX GUI as a standalone application, run the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$JAVA_HOME/bin/java -cp /path/to/log4j-api-2.23.1.jar:/path/to/log4j-core-2.23.1.jar:/path/to/log4j-jmx-gui-2.23.0-SNAPSHOT.jar org.apache.logging.log4j.jmx.gui.ClientGui <options></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or on Windows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">%JAVA_HOME%\bin\java -cp \path\to\log4j-api-2.23.1.jar;\path\to\log4j-core-2.23.1.jar;\path\to\log4j-jmx-gui-2.23.1.jar org.apache.logging.log4j.jmx.gui.ClientGui <options></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where options are one of the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;host&gt;:&lt;port&gt;</code></p>
+</li>
+<li>
+<p><code>service:jmx:rmi:///jndi/rmi://&lt;host&gt;:&lt;port&gt;/jmxrmi</code></p>
+</li>
+<li>
+<p><code>service:jmx:rmi://&lt;host&gt;:&lt;port&gt;/jndi/rmi://&lt;host&gt;:&lt;port&gt;/jmxrmi</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The port number (i.e., <code>port</code>) must be the same as the <code>com.sun.management.jmxremote.port</code> configured for the application you want to monitor.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For example, if you started your application with these options:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">com.sun.management.jmxremote.port=33445
+com.sun.management.jmxremote.authenticate=false
+com.sun.management.jmxremote.ssl=false</code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Note that this disables all security so this is not recommended for production environments!
+Oracle&#8217;s documentation on <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/management/agent.html#gdenl">Remote Monitoring and Management</a> provides details on how to configure JMX more securely with password authentication and SSL.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Then you can run the client with this command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$JAVA_HOME/bin/java -cp /path/to/log4j-api-2.23.1.jar:/path/to/log4j-core-2.23.1.jar:/path/to/log4j-jmx-gui-2.23.0-SNAPSHOT.jar org.apache.logging.log4j.jmx.gui.ClientGui localhost:33445</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or on Windows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">%JAVA_HOME%\bin\java -cp \path\to\log4j-api-2.23.1.jar;\path\to\log4j-core-2.23.1.jar;\path\to\log4j-jmx-gui-2.23.1.jar org.apache.logging.log4j.jmx.gui.ClientGui localhost:33445</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The screenshot below shows the <code>StatusLogger</code> panel of the client GUI when running as a standalone application.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/jmx-standalone-statuslogger.png" alt="jmx standalone statuslogger">
+</div>
+</div>
+<div class="paragraph">
+<p>The screenshot below shows the configuration editor panel of the client GUI when running as a standalone application.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/jmx-standalone-editconfig.png" alt="jmx standalone editconfig">
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>
+    Copyright © 1999-2024 <a href="https://www.apache.org/">The Apache Software Foundation</a>.
+    Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache Software License, Version 2.0</a>.
+    Please read our <a href="https://privacy.apache.org/policies/privacy-policy-public.html">privacy policy</a>.
+  </p>
+  <p>
+    Apache, Log4j, and the Apache feather logo are trademarks or registered trademarks of The Apache Software Foundation.
+    Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+    Other names may be trademarks of their respective owners.
+  </p>
+</footer>
+<script id="site-script" src="./_/js/site.js" data-ui-root-path="./_"></script>
+<script async src="./_/js/vendor/highlight.js"></script>
+<!-- `@asciidoctor/tabs` extension scripts -->
+<script async src="./_/js/vendor/tabs.js"></script>
+  </body>
+</html>
