@@ -3,6 +3,6 @@
        xmlns="https://logging.apache.org/xml/ns"
        xsi:schemaLocation="https://logging.apache.org/xml/ns https://logging.apache.org/xml/ns/log4j-changelog-0.xsd"
        type="updated">
-  <issue id="13" link="https://github.com/apache/logging-log4j-jmx-gui/pull/13"/>
+  <issue id="15" link="https://github.com/apache/logging-log4j-jmx-gui/pull/15"/>
   <description format="asciidoc">Update `apache/logging-parent` to version ``</description>
 </entry>
