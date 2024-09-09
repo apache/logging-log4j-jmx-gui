@@ -148,7 +148,7 @@
     <project.build.outputTimestamp>2023-11-15T15:33:35Z</project.build.outputTimestamp>
 
     <!-- dependency versions -->
-    <log4j.version>2.23.1</log4j.version>
+    <log4j.version>2.24.0</log4j.version>
     <nashorn.version>15.4</nashorn.version>
 
     <!-- Additional manifest entries -->
