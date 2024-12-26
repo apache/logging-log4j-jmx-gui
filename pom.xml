@@ -149,7 +149,7 @@
 
     <!-- dependency versions -->
     <log4j.version>2.24.3</log4j.version>
-    <nashorn.version>15.5</nashorn.version>
+    <nashorn.version>15.6</nashorn.version>
 
     <!-- Additional manifest entries -->
     <Class-Path>log4j-api-${log4j.version}.jar log4j-core-${log4j.version}.jar</Class-Path>
