@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Log4j JMX GUI :: Apache Log4j JMX GUI</title>
     <link rel="canonical" href="https://logging.apache.org/log4j/jmx-gui/index.html">
-    <meta name="generator" content="Antora 3.2.0-alpha.6">
+    <meta name="generator" content="Antora 3.2.0-alpha.8">
 <link rel="stylesheet" href="./_/css/site.css">
 <link rel="icon" href="./_/../_images/favicon.ico" type="image/x-icon">
 <!-- `@asciidoctor/tabs` extension styles -->
@@ -126,7 +126,7 @@ See the <a href="https://logging.apache.org/log4j/2.x/manual/jmx.html">Log4j JMX
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$JAVA_HOME/bin/jconsole -pluginpath /path/to/log4j-api-2.23.1.jar:/path/to/log4j-core-2.23.1.jar:/path/to/log4j-jmx-gui-2.23.0-SNAPSHOT.jar</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$JAVA_HOME/bin/jconsole -pluginpath /path/to/log4j-api-2.25.1.jar:/path/to/log4j-core-2.25.1.jar:/path/to/log4j-jmx-gui-2.23.0-SNAPSHOT.jar</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -134,7 +134,7 @@ See the <a href="https://logging.apache.org/log4j/2.x/manual/jmx.html">Log4j JMX
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">%JAVA_HOME%\bin\jconsole -pluginpath \path\to\log4j-api-2.23.1.jar;\path\to\log4j-core-2.23.1.jar;\path\to\log4j-jmx-gui-2.23.0-SNAPSHOT.jar</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">%JAVA_HOME%\bin\jconsole -pluginpath \path\to\log4j-api-2.25.1.jar;\path\to\log4j-core-2.25.1.jar;\path\to\log4j-jmx-gui-2.23.0-SNAPSHOT.jar</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -184,7 +184,7 @@ Reconfiguring with text from the editor happens in memory only and the text is n
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$JAVA_HOME/bin/java -cp /path/to/log4j-api-2.23.1.jar:/path/to/log4j-core-2.23.1.jar:/path/to/log4j-jmx-gui-2.23.0-SNAPSHOT.jar org.apache.logging.log4j.jmx.gui.ClientGui <options></code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$JAVA_HOME/bin/java -cp /path/to/log4j-api-2.25.1.jar:/path/to/log4j-core-2.25.1.jar:/path/to/log4j-jmx-gui-2.23.0-SNAPSHOT.jar org.apache.logging.log4j.jmx.gui.ClientGui <options></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -192,7 +192,7 @@ Reconfiguring with text from the editor happens in memory only and the text is n
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">%JAVA_HOME%\bin\java -cp \path\to\log4j-api-2.23.1.jar;\path\to\log4j-core-2.23.1.jar;\path\to\log4j-jmx-gui-2.23.1.jar org.apache.logging.log4j.jmx.gui.ClientGui <options></code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">%JAVA_HOME%\bin\java -cp \path\to\log4j-api-2.25.1.jar;\path\to\log4j-core-2.25.1.jar;\path\to\log4j-jmx-gui-2.25.1.jar org.apache.logging.log4j.jmx.gui.ClientGui <options></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -255,7 +255,7 @@ Oracle&#8217;s documentation on <a href="https://docs.oracle.com/javase/8/docs/t
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$JAVA_HOME/bin/java -cp /path/to/log4j-api-2.23.1.jar:/path/to/log4j-core-2.23.1.jar:/path/to/log4j-jmx-gui-2.23.0-SNAPSHOT.jar org.apache.logging.log4j.jmx.gui.ClientGui localhost:33445</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$JAVA_HOME/bin/java -cp /path/to/log4j-api-2.25.1.jar:/path/to/log4j-core-2.25.1.jar:/path/to/log4j-jmx-gui-2.23.0-SNAPSHOT.jar org.apache.logging.log4j.jmx.gui.ClientGui localhost:33445</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -263,7 +263,7 @@ Oracle&#8217;s documentation on <a href="https://docs.oracle.com/javase/8/docs/t
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">%JAVA_HOME%\bin\java -cp \path\to\log4j-api-2.23.1.jar;\path\to\log4j-core-2.23.1.jar;\path\to\log4j-jmx-gui-2.23.1.jar org.apache.logging.log4j.jmx.gui.ClientGui localhost:33445</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">%JAVA_HOME%\bin\java -cp \path\to\log4j-api-2.25.1.jar;\path\to\log4j-core-2.25.1.jar;\path\to\log4j-jmx-gui-2.25.1.jar org.apache.logging.log4j.jmx.gui.ClientGui localhost:33445</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -290,7 +290,7 @@ Oracle&#8217;s documentation on <a href="https://docs.oracle.com/javase/8/docs/t
 </div>
 <footer class="footer">
   <p>
-    Copyright © 1999-2024 <a href="https://www.apache.org/">The Apache Software Foundation</a>.
+    Copyright © 1999-2025 <a href="https://www.apache.org/">The Apache Software Foundation</a>.
     Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache Software License, Version 2.0</a>.
     Please read our <a href="https://privacy.apache.org/policies/privacy-policy-public.html">privacy policy</a>.
   </p>
