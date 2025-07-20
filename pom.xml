@@ -22,7 +22,7 @@
   <parent>
     <groupId>org.apache.logging</groupId>
     <artifactId>logging-parent</artifactId>
-    <version>11.3.0</version>
+    <version>12.1.1</version>
   </parent>
 
   <groupId>org.apache.logging.log4j</groupId>
@@ -148,8 +148,12 @@
     <project.build.outputTimestamp>2023-11-15T15:33:35Z</project.build.outputTimestamp>
 
     <!-- dependency versions -->
+    <bnd.annotation.version>7.1.0</bnd.annotation.version>
     <log4j.version>2.25.1</log4j.version>
     <nashorn.version>15.6</nashorn.version>
+    <osgi.annotation.bundle.version>2.0.0</osgi.annotation.bundle.version>
+    <osgi.annotation.versioning.version>1.1.2</osgi.annotation.versioning.version>
+    <spotbugs-annotations.version>4.9.3</spotbugs-annotations.version>
 
     <!-- Additional manifest entries -->
     <Class-Path>log4j-api-${log4j.version}.jar log4j-core-${log4j.version}.jar</Class-Path>
@@ -161,24 +165,28 @@
     <dependency>
       <groupId>biz.aQute.bnd</groupId>
       <artifactId>biz.aQute.bnd.annotation</artifactId>
+      <version>${bnd.annotation.version}</version>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>com.github.spotbugs</groupId>
       <artifactId>spotbugs-annotations</artifactId>
+      <version>${spotbugs-annotations.version}</version>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>org.osgi</groupId>
-      <artifactId>osgi.annotation</artifactId>
+      <artifactId>org.osgi.annotation.versioning</artifactId>
+      <version>${osgi.annotation.versioning.version}</version>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>org.osgi.annotation.bundle</artifactId>
+      <version>${osgi.annotation.bundle.version}</version>
       <scope>provided</scope>
     </dependency>
 
