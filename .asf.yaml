@@ -1,0 +1,13 @@
+publish:
+  whoami: main-site-pro-out
+  subdir: content/log4j/jmx-gui
+
+
+# INFRA cannot handle change sets bigger than a certain size: https://the-asf.slack.com/archives/CBX4TSBQ8/p1709724983391709
+# This file will be used to push a small commit to help the INFRA to recover.
+#
+# Random values to cause a change:
+#
+# - Seed: 13695
+# - Commit ID: 912a299299d45da1f1ea6578158fc5791b3c7d9c
+# - Timestamp: 2025-07-20T17:19:42Z
