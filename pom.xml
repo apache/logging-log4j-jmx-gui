@@ -149,7 +149,7 @@
 
     <!-- dependency versions -->
     <bnd.annotation.version>7.1.0</bnd.annotation.version>
-    <log4j.version>2.25.1</log4j.version>
+    <log4j.version>2.25.2</log4j.version>
     <nashorn.version>15.7</nashorn.version>
     <osgi.annotation.bundle.version>2.0.0</osgi.annotation.bundle.version>
     <osgi.annotation.versioning.version>1.1.2</osgi.annotation.versioning.version>
