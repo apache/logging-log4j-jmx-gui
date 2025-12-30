@@ -148,7 +148,7 @@
     <project.build.outputTimestamp>2023-11-15T15:33:35Z</project.build.outputTimestamp>
 
     <!-- dependency versions -->
-    <bnd.annotation.version>7.1.0</bnd.annotation.version>
+    <bnd.annotation.version>7.2.0</bnd.annotation.version>
     <log4j.version>2.25.2</log4j.version>
     <nashorn.version>15.7</nashorn.version>
     <osgi.annotation.bundle.version>2.0.0</osgi.annotation.bundle.version>
